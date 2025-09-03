@@ -1,27 +1,26 @@
 public class libro {
-    // Atributos
+    
     private String titulo;
     private String autor;
     private int numeroEjemplares;
-    private int prestados;
+    private int numeroEjemplaresPrestados;
 
-    // Constructor por defecto
+  
     public libro() {
         this.titulo = "";
         this.autor = "";
         this.numeroEjemplares= 0;
-        this.prestados = 0;
+        this.numeroEjemplaresPrestados = 0;
     }
 
-    // Constructor con parámetros
-    public libro(String titulo, String autor, int numeroEjemplares, int prestados) {
+    public libro(String titulo, String autor, int numeroEjemplares, int numeroEjemplaresPrestados) {
         this.titulo = titulo;
         this.autor = autor;
         this.numeroEjemplares = numeroEjemplares;
-        this.prestados = prestados;
+        this.numeroEjemplaresPrestados = numeroEjemplaresPrestados;
     }
 
-    // Getters y setters
+
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
 
@@ -31,35 +30,33 @@ public class libro {
     public int getNumeroEjemplares() { return numeroEjemplares; }
     public void setNumeroEjemplares(int numeroEjemplares) { this.numeroEjemplares = numeroEjemplares; }
 
-    public int getPrestados() { return prestados; }
-    public void setPrestados(int prestados) { this.prestados = prestados; }
+    public int getNumeroEjemplaresPrestados() { return numeroEjemplaresPrestados; }
+    public void setNumeroEjemplaresPrestados(int numeroEjemplaresPrestados) { this.numeroEjemplaresPrestados = numeroEjemplaresPrestados; }
 
-    // Método préstamo
     public boolean prestar() {
-        if (prestados < numeroEjemplares) {
-            prestados++;
+        if (numeroEjemplaresPrestados < numeroEjemplares) {
+           numeroEjemplaresPrestados++;
             return true;
         } else {
             return false;
         }
     }
 
-    // Método devolución
     public boolean devolver() {
-        if (prestados > 0) {
-            prestados--;
+        if (numeroEjemplaresPrestados > 0) {
+            numeroEjemplaresPrestados--;
             return true;
         } else {
             return false;
         }
     }
 
-    // Método toString
+ 
     @Override
     public String toString() {
         return "Libro: " + titulo + " | Autor: " + autor + 
                " | Ejemplares: " + numeroEjemplares + 
-               " | Prestados: " + prestados;
+               " | Prestados: " + numeroEjemplaresPrestados;
     }
 }
 
